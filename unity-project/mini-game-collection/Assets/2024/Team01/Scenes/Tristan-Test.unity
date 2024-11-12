@@ -276,6 +276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 100
   rotateTurret: {fileID: 834283197}
+  turretCam: {fileID: 981806660}
+  gunRange: 200
+  gunDamage: 25
 --- !u!114 &981806663
 MonoBehaviour:
   m_ObjectHideFlags: 0
