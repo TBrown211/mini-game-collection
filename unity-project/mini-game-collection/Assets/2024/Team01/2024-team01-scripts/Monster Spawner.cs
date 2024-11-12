@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
+    //code taked from video
     //This selects what Pefab we are using
     [SerializeField]
     private GameObject Monster;
