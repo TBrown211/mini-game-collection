@@ -34,10 +34,9 @@ namespace MiniGameCollection.Games2024.Team01
             float lookY = ArcadeInput.Player2.AxisY * sensitivity * Time.deltaTime;
             //bool shoot = ArcadeInput.Player2.Action1.Down;
 
-            if (ArcadeInput.Player2.Action1.Pressed) // Use the shoot function
+            if (ArcadeInput.Player2.Action1.Down) // Use the shoot function
             {
                 Shoot();
-                print("Hit");
             }
 
             //Camera Movement
