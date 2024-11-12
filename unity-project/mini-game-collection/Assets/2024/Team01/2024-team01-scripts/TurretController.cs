@@ -37,6 +37,7 @@ namespace MiniGameCollection.Games2024.Team01
             if (ArcadeInput.Player2.Action1.Pressed) // Use the shoot function
             {
                 Shoot();
+                print("Hit");
             }
 
             //Camera Movement
