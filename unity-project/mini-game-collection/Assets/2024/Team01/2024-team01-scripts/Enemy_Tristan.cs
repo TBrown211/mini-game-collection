@@ -8,7 +8,7 @@ namespace MiniGameCollection.Games2024.Team01
 {
     public class Enemy_Tristan : MonoBehaviour
     {
-        public float health;
+        public float health = 100f;
         // Start is called before the first frame update
         void Start()
         {

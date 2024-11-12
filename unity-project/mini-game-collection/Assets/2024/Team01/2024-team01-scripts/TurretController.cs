@@ -17,7 +17,7 @@ namespace MiniGameCollection.Games2024.Team01
         [SerializeField]
         float gunRange = 200f;
         [SerializeField]
-        float gunDamage = 25f;
+        float damage = 25f;
         
 
         // Start is called before the first frame update
@@ -32,9 +32,9 @@ namespace MiniGameCollection.Games2024.Team01
             //Arcade Input
             float lookX = ArcadeInput.Player2.AxisX * sensitivity * Time.deltaTime;
             float lookY = ArcadeInput.Player2.AxisY * sensitivity * Time.deltaTime;
-            bool shoot = ArcadeInput.Player2.Action1.Down;
+            //bool shoot = ArcadeInput.Player2.Action1.Down;
 
-            if (shoot) // Use the shoot function
+            if (ArcadeInput.Player2.Action1.Pressed) // Use the shoot function
             {
                 Shoot();
             }
@@ -53,12 +53,12 @@ namespace MiniGameCollection.Games2024.Team01
             if (Physics.Raycast(turretCam.transform.position, turretCam.transform.forward, out hit, gunRange))
             {
                 Debug.Log(hit.transform.name);
-            }
 
-            Enemy_Tristan enemy = hit.transform.GetComponent<Enemy_Tristan>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(gunDamage);
+                Enemy_Tristan enemy = hit.transform.GetComponent<Enemy_Tristan>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                }
             }
         }
     }
