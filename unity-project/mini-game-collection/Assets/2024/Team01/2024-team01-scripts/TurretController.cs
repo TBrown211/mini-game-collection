@@ -54,6 +54,12 @@ namespace MiniGameCollection.Games2024.Team01
             {
                 Debug.Log(hit.transform.name);
             }
+
+            Enemy_Tristan enemy = hit.transform.GetComponent<Enemy_Tristan>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(gunDamage);
+            }
         }
     }
 }
