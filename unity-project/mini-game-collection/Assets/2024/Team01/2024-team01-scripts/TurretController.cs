@@ -13,18 +13,17 @@ namespace MiniGameCollection.Games2024.Team01
         public Transform rotateTurret;
         public Camera turretCam;
 
+        public ParticleSystem muzzleFlash;
+
         float xRotation = 0f;
         [SerializeField]
         float gunRange = 200f;
         [SerializeField]
         float damage = 25f;
-        
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
+        [SerializeField]
+        float fireRate = 15f;
+        [SerializeField]
+        float nextTimeToFire = 0f;
 
         // Update is called once per frame
         void Update()
@@ -34,8 +33,9 @@ namespace MiniGameCollection.Games2024.Team01
             float lookY = ArcadeInput.Player2.AxisY * sensitivity * Time.deltaTime;
             //bool shoot = ArcadeInput.Player2.Action1.Down;
 
-            if (ArcadeInput.Player2.Action1.Down) // Use the shoot function
+            if (ArcadeInput.Player2.Action1.Down && Time.time >= nextTimeToFire) // Use the shoot function
             {
+                nextTimeToFire = Time.time + 1f / fireRate;
                 Shoot();
             }
 
@@ -49,6 +49,8 @@ namespace MiniGameCollection.Games2024.Team01
 
         public void Shoot()
         {
+            muzzleFlash.Play();
+
             RaycastHit hit;
             if (Physics.Raycast(turretCam.transform.position, turretCam.transform.forward, out hit, gunRange))
             {
