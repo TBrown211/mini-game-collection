@@ -9,6 +9,8 @@ namespace MiniGameCollection.Games2024.Team01
     public class Enemy_Tristan : MonoBehaviour
     {
         public float health = 100f;
+
+        public float enemyDamage = 1f;
         // Start is called before the first frame update
         void Start()
         {
@@ -28,6 +30,11 @@ namespace MiniGameCollection.Games2024.Team01
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            
         }
     }
 
