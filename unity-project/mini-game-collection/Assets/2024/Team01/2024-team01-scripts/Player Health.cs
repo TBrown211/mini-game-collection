@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MiniGameCollection.Games2024.Team01
 {
@@ -9,12 +10,19 @@ namespace MiniGameCollection.Games2024.Team01
         public float playerMaxHealth = 3f;
         public float playerCurretHealth;
 
-        void PlayerTakeDamage()
+        private void Start()
         {
-
+            playerCurretHealth = playerMaxHealth;
         }
 
-
+        public void TakeDamage(float amount)
+        {
+            playerCurretHealth -= amount;
+            if (playerCurretHealth <= 0)
+            {
+                SceneManager.LoadScene("Tristan-Test");
+            }
+        }
     }
 
 }
