@@ -9,8 +9,9 @@ namespace MiniGameCollection.Games2024.Team01
     public class Enemy_Tristan : MonoBehaviour
     {
         public float health = 100f;
-
         public float enemyDamage = 1f;
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -32,9 +33,17 @@ namespace MiniGameCollection.Games2024.Team01
             }
         }
 
-        private void OnCollisionEnter(Collision other)
+        public void OnCollisionEnter(Collision collision)
         {
-            
+            if (collision.gameObject.tag == "Player")
+            {
+                var healthComponent = collision.gameObject.GetComponent<PlayerHealth>();
+                if (healthComponent != null)
+                {
+                    healthComponent.PlayerTakeDamage(enemyDamage);
+                }
+                Destroy(gameObject);
+            }
         }
     }
 

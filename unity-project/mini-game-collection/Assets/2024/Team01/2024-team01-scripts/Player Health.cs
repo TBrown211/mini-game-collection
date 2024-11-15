@@ -15,7 +15,7 @@ namespace MiniGameCollection.Games2024.Team01
             playerCurretHealth = playerMaxHealth;
         }
 
-        public void TakeDamage(float amount)
+        public void PlayerTakeDamage(float amount)
         {
             playerCurretHealth -= amount;
             if (playerCurretHealth <= 0)
