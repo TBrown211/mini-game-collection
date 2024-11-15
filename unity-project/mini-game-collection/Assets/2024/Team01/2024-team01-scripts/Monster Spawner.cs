@@ -28,7 +28,7 @@ public class MonsterSpawner : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);         //X value of where they can spawn  Y Value
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-20f, 20), Random.Range(1f, 1.5f), 0), Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-50f, 50), Random.Range(1f, 1.5f), 0), Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 
