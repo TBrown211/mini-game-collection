@@ -17,4 +17,9 @@ public class MonsterChase : MonoBehaviour
     {
         Monsters.transform.position = Vector3.MoveTowards(Monsters.transform.position, Target.transform.position, speed);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+ 
+    }
 }
