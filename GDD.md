@@ -1,4 +1,4 @@
-##Game Design Document
+## Game Design Document
 
 
 **Define the desired gameplay. What are you making?**
