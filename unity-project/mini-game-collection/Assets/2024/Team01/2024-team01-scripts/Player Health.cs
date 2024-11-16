@@ -20,7 +20,7 @@ namespace MiniGameCollection.Games2024.Team01
             playerCurretHealth -= amount;
             if (playerCurretHealth <= 0)
             {
-                SceneManager.LoadScene("Tristan-Test");
+                SceneManager.LoadScene("main-menu");
             }
         }
     }

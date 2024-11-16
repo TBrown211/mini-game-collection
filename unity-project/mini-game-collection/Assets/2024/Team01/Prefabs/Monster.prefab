@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3577271532124537731}
   - component: {fileID: 3831715138174911852}
   - component: {fileID: 8284262167362954186}
+  - component: {fileID: -8972971681956978455}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4719254617645495701}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -123,3 +124,17 @@ MonoBehaviour:
   Monsters: {fileID: 4719254617645495701}
   Target: {fileID: 5264148279710967147, guid: 30899217702c41b41a91b4bb07978be2, type: 3}
   speed: 0.03
+--- !u!114 &-8972971681956978455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719254617645495701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d393f312092be834eacb8c265bc0f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  enemyDamage: 1
